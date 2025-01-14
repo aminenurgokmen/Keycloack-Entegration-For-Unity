@@ -7,7 +7,7 @@ Bu entegrasyon için docker kurulumlarını halletikten sonra bir mimari oluştu
 # Webde http://localhost:8086/ adresine gidip şu adımları takip et.
 1.	admin / admin bilgilerini gir. (Compose dosyası içerisinde belirtilir.)
               
-  keycloak:
+  'keycloak:
     image: quay.io/keycloak/keycloak:23.0.6
     ports:
       - "8086:8080"
@@ -18,7 +18,7 @@ Bu entegrasyon için docker kurulumlarını halletikten sonra bir mimari oluştu
       KC_HOSTNAME: "localhost"
     command:
       - "start-dev"
-    restart: unless-stopped
+    restart: unless-stopped'
 
 2.	Giriş yaptıktan sonra sol üstte “Master” adlı bir Realm görürsün. İstersen “Master”’ı kullanabilirsin, ama pratikte yeni bir realm oluşturmak daha temizdir. Örnek:
 o	Add Realm butonuna tıkla,
