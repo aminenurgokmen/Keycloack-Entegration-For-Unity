@@ -1,9 +1,8 @@
 Bu entegrasyon için docker kurulumlarını halletikten sonra bir mimari oluşturmamız gerekli.
 
-•  NGINX’in 8080 portunu (host üzerinde) dinlediğini,
-•  Keycloak’ın ise 8086 portunda (host üzerinde) çalıştığını,
-•  Docker üzerinde bu iki servisi ayağa kaldırdığını
-varsayıyoruz.
+# NGINX’in 8080 portunu (host üzerinde) dinlediğini,
+# Keycloak’ın ise 8086 portunda (host üzerinde) çalıştığını,
+# Docker üzerinde bu iki servisi ayağa kaldırdığını varsayıyoruz.
 
 Webde http://localhost:8086/ adresine gidip şu adımları takip et.
 
@@ -23,22 +22,22 @@ Webde http://localhost:8086/ adresine gidip şu adımları takip et.
     restart: unless-stopped
 
 2.	Giriş yaptıktan sonra sol üstte “Master” adlı bir Realm görürsün. İstersen “Master”’ı kullanabilirsin, ama pratikte yeni bir realm oluşturmak daha temizdir. Örnek:
-	Add Realm butonuna tıkla,
-	Name: “myrealm” (sen dilediğin adı verebilirsin).
+o	Add Realm butonuna tıkla,
+o	Name: “myrealm” (sen dilediğin adı verebilirsin).
 3.	Yeni realm’ine geç. Sol menüde “Clients” bölümüne gir, “Create client” butonuna bas.
-	Client ID: unity-webgl-client (dilediğin bir isim)
-	“Client type” olarak “OpenID Connect”
-	Alt kısımda “Root URL” kısmına http://localhost:8080/ gibi değeri gir. (NGINX 8080 port üzerinden yayın yapacak ya, o yüzden 8080)
-	Kaydet/Devam et.
+o	Client ID: unity-webgl-client (dilediğin bir isim)
+o	“Client type” olarak “OpenID Connect”
+o	Alt kısımda “Root URL” kısmına http://localhost:8080/ gibi değeri gir. (NGINX 8080 port üzerinden yayın yapacak ya, o yüzden 8080)
+o	Kaydet/Devam et.
 4.	Oluşan client’ın ayar ekranında şu kısımları kontrol et:
-	Access Type: public (ya da “confidential” istersen, ama o zaman client secret vb. konfigürasyonu gerekebilir. Yeni başlayanlar için public yeterli.)
-	Valid redirect URIs: http://localhost:8080/*
-	Web Origins: http://localhost:8080
-	Bu sayede tarayıcı Keycloak’tan dönerken http://localhost:8080/... adresine redirect edebilecek.
+o	Access Type: public (ya da “confidential” istersen, ama o zaman client secret vb. konfigürasyonu gerekebilir. Yeni başlayanlar için public yeterli.)
+o	Valid redirect URIs: http://localhost:8080/*
+o	Web Origins: http://localhost:8080
+o	Bu sayede tarayıcı Keycloak’tan dönerken http://localhost:8080/... adresine redirect edebilecek.
 Not: 8080, NGINX’ten Unity yayını yaptığın port. Keycloak ise 8086’da çalışıyor. Bu sayede cross-origin (CORS) ayarlarını “Web Origins” ile halletmiş oluyoruz.
 3. Test Kullanıcısı Oluşturma
-	Sol menüde “Users” → “Add User” ile bir kullanıcı ekle (örnek: testuser / şifre: test123).
-	Sonrasında “Credentials” sekmesinden şifreyi girip “Set password” diyerek atayabilirsin.
+•	Sol menüde “Users” → “Add User” ile bir kullanıcı ekle (örnek: amine / şifre: 123).
+•	Sonrasında “Credentials” sekmesinden şifreyi girip “Set password” diyerek atayabilirsin.
 Bu kadar. Keycloak tarafı hazır.
 
 
