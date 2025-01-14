@@ -1,11 +1,10 @@
 Bu entegrasyon için docker kurulumlarını halletikten sonra bir mimari oluşturmamız gerekli.
 
-# NGINX’in 8080 portunu (host üzerinde) dinlediğini,
-# Keycloak’ın ise 8086 portunda (host üzerinde) çalıştığını,
-# Docker üzerinde bu iki servisi ayağa kaldırdığını varsayıyoruz.
+1. NGINX’in 8080 portunu (host üzerinde) dinlediğini,
+2. Keycloak’ın ise 8086 portunda (host üzerinde) çalıştığını,
+3. Docker üzerinde bu iki servisi ayağa kaldırdığını varsayıyoruz.
 
-Webde http://localhost:8086/ adresine gidip şu adımları takip et.
-
+# Webde http://localhost:8086/ adresine gidip şu adımları takip et.
 1.	admin / admin bilgilerini gir. (Compose dosyası içerisinde belirtilir.)
               
   keycloak:
@@ -41,7 +40,9 @@ Not: 8080, NGINX’ten Unity yayını yaptığın port. Keycloak ise 8086’da �
 Bu kadar. Keycloak tarafı hazır.
 
 
-Unityde açılmasını istediğin sayfayı WebGL olarak build al. Build klasorünün içerisindeki dosyaları docker klasoründeki volumes-> ngnix -> web klasorüne taşı.
+# Unityde açılmasını istediğin sayfayı WebGL olarak build al. 
+
+Build klasorünün içerisindeki dosyaları docker klasoründeki volumes-> ngnix -> web klasorüne taşı.
 
 Burada keykloackı aktif etmemiz için index dosyasında değişiklikler yapmamız gerekli. Bu dosyayı notepad ile aç ve içerisini yukarıda verilen index.html dosyasının içeriği ile değiştir. 
 
