@@ -20,6 +20,7 @@ keycloak:
   command:
     - "start-dev"
   restart: unless-stopped
+  ```
 
 2.	Giriş yaptıktan sonra sol üstte “Master” adlı bir Realm görürsün. İstersen “Master”’ı kullanabilirsin, ama pratikte yeni bir realm oluşturmak daha temizdir. Örnek:
 o	Add Realm butonuna tıkla,
