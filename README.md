@@ -50,7 +50,33 @@ Burada keykloackı aktif etmemiz için index dosyasında değişiklikler yapmam�
 
 Tekrardan docker-compose up -d yapıp localhost:8080 adresine gidiyoruz ve keycloackta belirlediğimiz user ve password ile uygulamamıza erişebiliyoruz.
 
-Bu kadar! 
+Build1 bu kadar.
+
+#Peki her seferinde bu dosyayı elle mi değiştireceğiz?
+
+Build içeriği sürekli güncellenir. Her güncellemede biz bu entegrasyon için index.html dosyasının içeriğini değiştirmekle uğraşmamalıyız.
+
+Asset klasorününün altına WebGLTemplates onun altına MyCustomTemplate adında iki klasor açın.
+
+C:\Program Files\Unity\Hub\Editor\2023.2.19f1\Editor\Data\PlaybackEngines\WebGLSupport\BuildTools\WebGLTemplates dizinine gidin. 2023.2.19f1 benim kullandığım sürümüm. Hangi sürümü kullanıyorsanız o klasorü seçmeyi unutmayın.
+
+Bu klasorün altında Default, Minimal, PWA, WebGLIncludes adında klasorler göreceksiniz. Biz PWA templateini kullanacağız. PWA'nın içersindeki her şeyi, Unity'de açmış olduğumuz MyCustomTemplate klasorünün altına yapıştırın.
+
+index.html dosyasının içeriğini yukarıda bulunan Build2 klasoründeki index.html kodlarıyla değiştirin.
+
+Unity'de File -> BuildSettings -> PlayerSettings -> Resulation and Presentation sekmesine gidin. Burada açmış olduğunuz MyCustomTemplate seçeneğini göreceksiniz. Onu seçin.
+
+Clean Build alın ve build dosyalarının hepsini compose(yani containerlarınızın kurulu olduğu yer)\volumes\nginx\web dizininin altına yapıştırın.
+
+http://localhost:8080 adresine gittiğinizde keycloackta açmış olduğunuz user ve password alanlarını doldurun ve unity sahnesine geçiş yapın.
+
+Bu sistemle her seferinde build dosyasını değiştirmek zorunda kalmazsınız.
+
+Bu kadar!
+
+
+
+
 
 
 
