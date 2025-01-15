@@ -77,7 +77,7 @@ Clean Build alın.
 
 index.html dosyasının içeriğinde dataUrl: buildURL + "/Build.data" olarak girildiği için build alacağınız klasorün adı Build olması elzemdir. Ya da bu yolu adını verdiğiniz klasorün adı olarak güncelleyin.
 
-'''html
+```html
   var config = {
         arguments: [],
         dataUrl: buildUrl + "/Build.data",
@@ -89,7 +89,7 @@ index.html dosyasının içeriğinde dataUrl: buildURL + "/Build.data" olarak gi
         productVersion: "1.0",
         showBanner: unityShowBanner,
       };
-'''
+```
 
 
 Build dosyalarının hepsini compose(yani containerlarınızın kurulu olduğu yer)\volumes\nginx\web dizininin altına yapıştırın.
