@@ -71,7 +71,28 @@ index.html dosyasının içeriğini yukarıda bulunan Build2 klasoründeki index
 
 Unity'de File -> BuildSettings -> PlayerSettings -> Resulation and Presentation sekmesine gidin. Burada açmış olduğunuz MyCustomTemplate seçeneğini göreceksiniz. Onu seçin.
 
-Clean Build alın ve build dosyalarının hepsini compose(yani containerlarınızın kurulu olduğu yer)\volumes\nginx\web dizininin altına yapıştırın.
+Clean Build alın. 
+
+!!!ÖNEMLİ
+
+index.html dosyasının içeriğinde dataUrl: buildURL + "/Build.data" olarak girildiği için build alacağınız klasorün adı Build olması elzemdir. Ya da bu yolu adını verdiğiniz klasorün adı olarak güncelleyin.
+
+'''html
+  var config = {
+        arguments: [],
+        dataUrl: buildUrl + "/Build.data",
+        frameworkUrl: buildUrl + "/Build.framework.js",
+        codeUrl: buildUrl + "/Build.wasm",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "DefaultCompany",
+        productName: "KeycloackEntegration",
+        productVersion: "1.0",
+        showBanner: unityShowBanner,
+      };
+'''
+
+
+Build dosyalarının hepsini compose(yani containerlarınızın kurulu olduğu yer)\volumes\nginx\web dizininin altına yapıştırın.
 
 http://localhost:8080 adresine gittiğinizde keycloackta açmış olduğunuz user ve password alanlarını doldurun ve unity sahnesine geçiş yapın.
 
