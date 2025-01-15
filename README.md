@@ -52,7 +52,7 @@ Tekrardan docker-compose up -d yapıp localhost:8080 adresine gidiyoruz ve keycl
 
 Build1 bu kadar.
 
-#Peki her seferinde bu dosyayı elle mi değiştireceğiz?
+# Peki her seferinde bu dosyayı elle mi değiştireceğiz?
 
 Build içeriği sürekli güncellenir. Her güncellemede biz bu entegrasyon için index.html dosyasının içeriğini değiştirmekle uğraşmamalıyız.
 
